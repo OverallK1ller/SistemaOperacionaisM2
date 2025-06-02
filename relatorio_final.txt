@@ -1,8 +1,8 @@
 =========== RELATÓRIO FINAL ===========
-Total de endereços processados: 2
-TLB hits: 0
-TLB misses: 2
-Page hits: 0
-Page faults: 2
-Dirty writes (páginas sujas escritas de volta): 0
+Total de endereços processados: 400
+TLB hits: 9
+TLB misses: 391
+Page hits: 33
+Page faults: 358
+Dirty writes (páginas sujas escritas de volta): 12
 =======================================

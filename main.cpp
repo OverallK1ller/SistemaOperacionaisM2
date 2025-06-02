@@ -236,6 +236,7 @@ tlbMisses++;
             cout << "       Page fault\n";
             frame = handle_page_fault(pageTable[virtualPage], -1);
             cout << "       Carregado da backing store\n";
+    
         }
         tlb.insert(virtualPage, frame);
     }
@@ -299,6 +300,7 @@ tlbMisses++;
             cout << "       Page fault\n";
             frame = handle_page_fault(entry, -1);
             cout << "       Carregado da backing store\n";
+    
         }
         tlb.insert(virtualPageNumber, frame);
     }
@@ -341,8 +343,8 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    ofstream clearFile("backing_store.txt", ios::trunc);
-    clearFile.close();
+
+
 
     TLB tlb;
     PageTableEntry* level1Table[PAGE_TABLE_ENTRIES_LVL1] = {nullptr};
