@@ -326,6 +326,7 @@ totalAddresses++;
 }
 
 int main(int argc, char* argv[]) {
+    
     srand(time(nullptr));
 
     if (argc < 2) {
@@ -334,14 +335,24 @@ int main(int argc, char* argv[]) {
     }
 
     if (argc >= 3) {
+    try {
+        cout << "argc: " << argc << endl;
+for (int i = 0; i < argc; ++i) {
+    cout << "argv[" << i << "]: [" << argv[i] << "]" << endl;
+}
         int argSize = stoi(argv[2]);
+
         if (argSize == 256 || argSize == 1024 || argSize == 2048 || argSize == 4096) {
             PAGE_SIZE = argSize;
         } else {
             cerr << "Tamanho de página inválido. Use 256, 1024, 2048 ou 4096.\n";
             return 1;
         }
+    } catch (const invalid_argument& e) {
+        cerr << "Erro: argumento do tamanho da página inválido. Valor recebido: '" << argv[2] << "'\n";
+        return 1;
     }
+}
 
 
 
