@@ -1,0 +1,11 @@
+g++ -o main main.cpp
+
+./main "arquivo ou endereço" tamanho de página
+
+EX:
+./main 500
+./main 200 256
+./main enderecos.txt 256
+./main enderecos.txt 1024
+./main enderecos.txt 2048
+./main enderecos.txt 4096                  (padrão)
